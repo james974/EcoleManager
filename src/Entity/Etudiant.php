@@ -27,6 +27,12 @@ class Etudiant
      */
     private $prenom;
 
+    
+    /**
+     * @ORM\Column(type="string", length=255)
+     */
+    private $birthday;
+
     public function getId(): ?int
     {
         return $this->id;
@@ -54,5 +60,31 @@ class Etudiant
         $this->prenom = $prenom;
 
         return $this;
+    }
+
+    /**
+     * Get the value of birthday
+     */ 
+    public function getBirthday()
+    {
+        return $this->birthday;
+    }
+
+    /**
+     * Set the value of birthday
+     *
+     * @return  self
+     */ 
+    public function setBirthday($birthday)
+    {
+        $this->birthday = $birthday;
+
+        return $this;
+    }
+
+    
+    public function __toString()
+    {
+        return $this->nom."(".$this->birthday. ")";
     }
 }
