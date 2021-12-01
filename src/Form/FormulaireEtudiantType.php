@@ -7,6 +7,7 @@ use Symfony\Component\Form\AbstractType;
 use Symfony\Component\Form\FormBuilderInterface;
 use Symfony\Component\OptionsResolver\OptionsResolver;
 use Symfony\Component\Form\Extension\Core\Type\TextType;
+use Symfony\Component\Form\Extension\Core\Type\SubmitType;
 use Symfony\Component\Form\Extension\Core\Type\BirthdayType;
 
 class FormulaireEtudiantType extends AbstractType
@@ -16,8 +17,10 @@ class FormulaireEtudiantType extends AbstractType
         $builder
             ->add('nom', TextType::class)
             ->add('prenom',TextType::class)
-            ->add('Anniversaire',BirthdayType::class)
+            ->add('birthday',BirthdayType::class)
+            ->add("soumettre", SubmitType::class)
         ;
+       
     }
 
     public function configureOptions(OptionsResolver $resolver): void
